@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+   tailscale-derp:
+       container_name: tailscale-derp
+       image: tailscale-derp-docker:1.0
+       hostname: ${TAILSCALE_DERP_HOSTNAME}
+       volumes:
+         - /lib/modules:/lib/modules:ro
+         - $PWD/certs:/root/derper/${TAILSCALE_DERP_HOSTNAME}
+       cap_add:
+         - NET_ADMIN
+       environment:
+         - TAILSCALE_DERP_HOSTNAME=${TAILSCALE_DERP_HOSTNAME}
+         - TAILSCALE_DERP_VERIFY_CLIENTS=${TAILSCALE_DERP_VERIFY_CLIENTS}
+         - TAILSCALE_DERP_CERTMODE=${TAILSCALE_DERP_CERTMODE}
+         - TAILSCALE_AUTH_KEY=${TAILSCALE_AUTH_KEY}
+       ports:
+         - 80:80/tcp
+         - 443:443/tcp
+         - 3478:3478/udp
+         #Uncomment only if you aren't running tailscaled on the host system otherwise it will error
+         #- 41641:41641/udp
+       restart: unless-stopped
+       devices:
+         - /dev/net/tun:/dev/net/tun
+
