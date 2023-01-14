@@ -5,9 +5,13 @@ RUN apk add go
 RUN go install tailscale.com/cmd/derper@main
 
 #Install Tailscale and requirements
-RUN apk add openrc
 RUN apk add curl
-RUN curl -fsSL https://tailscale.com/install.sh | sh
+RUN apk add iptables
+
+RUN curl https://pkgs.tailscale.com/stable/tailscale_1.34.2_amd64.tgz -o /tmp/tailscale_1.34.2_amd64.tgz
+RUN cd /tmp && tar -xvf /tmp/tailscale_1.34.2_amd64.tgz
+RUN cp /tmp/tailscale_1.34.2_amd64/tailscaled /usr/sbin/tailscaled
+RUN cp /tmp/tailscale_1.34.2_amd64/tailscale /usr/bin/tailscale
 
 #Copy init script
 COPY init.sh /init.sh

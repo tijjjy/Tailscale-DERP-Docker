@@ -8,8 +8,10 @@ services:
        volumes:
          - /lib/modules:/lib/modules:ro
          - $PWD/certs:/root/derper/${TAILSCALE_DERP_HOSTNAME}
+         - $PWD/config:/var/lib/tailscale
        cap_add:
          - NET_ADMIN
+         - NET_RAW
        environment:
          - TAILSCALE_DERP_HOSTNAME=${TAILSCALE_DERP_HOSTNAME}
          - TAILSCALE_DERP_VERIFY_CLIENTS=${TAILSCALE_DERP_VERIFY_CLIENTS}
