@@ -13,6 +13,9 @@ My recommendation for the tailscale auth key to key an non-ephemeral key and onc
 The container was built and tested on Ubuntu 22 5.19.0-28-generic. It's docker so it will most likely work on other distros as well.
 
 # Instructions
+
+Instructions can be followed below or you can find a more detailed walkthrough on my blog. [https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server](https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server)
+
 ### Ports Required
 
 To allow full functionality of the DERP server, you will need to open/allow the following ports on your Firewall/Security Group
