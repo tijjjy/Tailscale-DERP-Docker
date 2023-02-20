@@ -2,7 +2,7 @@ FROM alpine:latest
 
 #Install GO and Tailscale DERPER
 RUN apk add go
-RUN go install tailscale.com/cmd/derper@main
+RUN go install tailscale.com/cmd/derper@v1.36.1
 
 #Install Tailscale and requirements
 RUN apk add curl
