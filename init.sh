@@ -4,7 +4,7 @@
 /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state >> /dev/stdout &
 /usr/bin/tailscale up --accept-routes=true --accept-dns=true --auth-key $TAILSCALE_AUTH_KEY >> /dev/stdout &
 
-#Check and created certs directory
+#Check for and or create certs directory
 if [[ ! -d "/root/derper/$TAILSCALE_DERP_HOSTNAME" ]]
 then
     mkdir -p /root/derper/$TAILSCALE_DERP_HOSTNAME
