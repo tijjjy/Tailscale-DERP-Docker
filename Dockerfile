@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+LABEL org.opencontainers.image.source https://github.com/tijjjy/Tailscale-DERP-Docker
+
 #Tailscale Version
 ENV TSVersion 1.36.2
 
