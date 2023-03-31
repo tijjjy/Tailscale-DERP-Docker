@@ -3,7 +3,7 @@ FROM alpine:latest
 LABEL org.opencontainers.image.source https://github.com/tijjjy/Tailscale-DERP-Docker
 
 #Tailscale Version
-ENV TSVersion 1.38.2
+ENV TSVersion 1.38.3
 
 #Install Tailscale and requirements
 RUN apk add curl iptables
