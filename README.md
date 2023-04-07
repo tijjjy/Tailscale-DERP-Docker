@@ -18,7 +18,7 @@ The container is setup to pull the latest version of the DERPER application and 
 
 To rebuild with the latest version simple run the following commands
 ```bash
-docker rm tailscale-derp-docker:1.0
+docker rmi tailscale-derp-docker:1.0
 docker build . -t tailscale-derp-docker:1.0
 ```
 
