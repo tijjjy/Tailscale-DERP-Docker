@@ -12,11 +12,14 @@ My recommendation for the tailscale auth key to key an non-ephemeral key and onc
 
 The container was built and tested on Ubuntu 22 5.19.0-28-generic. It's docker so it will most likely work on other distros as well.
 
-# Prebuilt Container
+# Container
 
-If you don't want to build the container locally, you can change the image inside the docker-compose.yml file to use the following image.  
-```
-ghcr.io/tijjjy/tailscale-derp-docker:latest
+The container is setup to pull the latest version of the DERPER application and the latest version of Tailscale each time you build the container.
+
+To rebuild with the latest version simple run the following commands
+```bash
+docker rm tailscale-derp-docker:1.0
+docker build . -t tailscale-derp-docker:1.0
 ```
 
 # Instructions
