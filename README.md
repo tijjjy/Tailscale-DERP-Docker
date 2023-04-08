@@ -22,6 +22,21 @@ docker rmi tailscale-derp-docker:1.0
 docker build . -t tailscale-derp-docker:1.0
 ```
 
+# Github Container Registry
+
+If you don't want to build the container, you can simply using the pre-built container I have added to the github container registry.
+
+**Note**: The pre-build container won't be updated instantly when new tailscale version are released due to personal priorities and merely finding the time to rebuild and push the container, if you find I haven't updated the container after a while, please make an issue on the repo or email me at github.1n35g@simplelogin.com and I will update the container as soon as possible.
+
+Using the docker-compose.yml file, simply change this line
+```
+image: tailscale-derp-docker:1.0
+```
+To the following,
+```
+image: ghcr.io/tijjjy/tailscale-derp-docker:latest
+```
+
 # Instructions
 
 Instructions can be followed below or you can find a more detailed walkthrough on my blog. [https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server](https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server)
