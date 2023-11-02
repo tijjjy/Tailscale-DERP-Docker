@@ -9,10 +9,10 @@ RUN apk add curl iptables
 RUN apk add go --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
 RUN go install tailscale.com/cmd/derper@main
 
+FROM alpine:latest
+
 #Install Tailscale and Tailscaled
 RUN apk add tailscale --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
-
-FROM alpine:latest
 
 RUN mkdir -p /root/go/bin
 COPY --from=builder /root/go/bin/derper /root/go/bin/derper
