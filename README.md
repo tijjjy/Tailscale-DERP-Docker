@@ -39,7 +39,7 @@ There is a github actions workflow setup to build and publish a new container ev
 
 # Instructions
 
-Instructions can be followed below or you can find a more detailed walkthrough on my blog. [https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server](https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server)
+Instructions can be followed below or you can find a more detailed walkthrough on my blog. [https://tijjjy.me/posts/selfhost-tailscale-derp-server/](https://tijjjy.me/posts/selfhost-tailscale-derp-server/)
 
 ### Ports Required
 
